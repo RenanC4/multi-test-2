@@ -19,5 +19,5 @@ script:
 deploy:
   provider: heroku
   api-key: 
-    secure: $HEROKU_API_KEY
+    secure: 317aeb3b-d69c-4ebe-9cc3-b07a113a8f6f
   app: multi-test2
