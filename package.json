@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "API que retorna os materiais disponibilizados",
   "main": "src/index.js",
+  "engines": {
+    "node": "12.x"
+  },
   "dependencies": {
     "ajv": "^6.11.0",
     "aws-sdk": "^2.657.0",
