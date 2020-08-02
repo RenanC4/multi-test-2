@@ -42,8 +42,6 @@
     "sinon": "^7.5.0"
   },
   "scripts": {
-    "build": "docker build .",
-    "build:tag": "docker build -t ava30-microapp-materials .",
     "cover": "npx nyc --reporter=lcov npm test",
     "test": "#echo \"Executando testes\" && mocha ./src/tests/*.js",
     "dev": "nodemon --inspect ./src/index.js dotenv_config_path=./env/local.env",
