@@ -42,11 +42,11 @@
     "build": "docker build .",
     "build:tag": "docker build -t ava30-microapp-materials .",
     "cover": "npx nyc --reporter=lcov npm test",
-    "test": "echo \"Executando testes\" && mocha ./src/tests/*.js",
+    "test": "#echo \"Executando testes\" && mocha ./src/tests/*.js",
     "dev": "nodemon --inspect ./src/index.js dotenv_config_path=./env/local.env",
     "start": "node ./src/index.js",
     "coverage": "npx nyc --reporter=lcov --reporter=text-lcov npm test",
-    "lint": "npx eslint \"src/** \" --ext .js --ignore-pattern \"src/openssl_keys/*\" --ignore-pattern \"src/databases/*.pem\" ",
+    "lint": "#npx eslint \"src/** \" --ext .js --ignore-pattern \"src/openssl_keys/*\" --ignore-pattern \"src/databases/*.pem\" ",
     "lint:fix": "npx eslint \"src/** \" --ext .js --ignore-pattern \"src/openssl_keys/*\" --ignore-pattern \"src/databases/*.pem\" --fix",
     "format": "npx prettier --write \"src/**/*.ts\" \"src/**/*.js\""
   },
