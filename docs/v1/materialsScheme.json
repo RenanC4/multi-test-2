@@ -1,0 +1,90 @@
+{
+	"openapi": "3.0.0",
+	"components": {
+		"securitySchemes": {
+			"bearerAuth": {
+				"type": "http",
+				"scheme": "bearer",
+				"bearerFormat": "JWT"
+			}
+		}
+	},
+	"info": {
+		"title": "API de Materiais disponibilizados.",
+		"description": "Retorna os materiais do aluno informado",
+		"contact": {
+			"email": "miraculous@kroton.onmicrosoft.com"
+		},
+		"version": "1"
+	},
+	"servers": [
+		{
+		  "url": "/"
+		}
+		  
+  ],
+  "paths": {
+    "/material/{shortname}": {
+		"get": {	"security": [{
+    }],
+		  "tags": [
+			"Retorna os materiais do usuario informado"
+		  ],
+		  "summary": "",
+		  "description": "",
+		  "parameters": [
+			{
+			  "name": "shortname",
+			  "in": "path",
+			  "description": "",
+			  "required": true,
+			  "style": "simple",
+			  "explode": false,
+			  "schema": {
+				"type": "string",
+				"example": "HAMI_GENETICA_1"
+			  }
+			}],
+		  "responses": {
+			"200": {
+			  "description": "Retorna os materiais do aluno informado",
+			  "content": {
+				"application/json": {
+				  "schema": {
+					"type": "object",
+					"properties": { },
+					"example" : {
+						"response": {
+							"urls": [
+								{
+									"name": "Material de apoio",
+									"externalurl": "https://ava30-disciplinas.s3.amazonaws.com/20201/abd99cb3c10b954e27ba4b199ded3547.pdf?AWSAccessKeyId=AKIAIK4MANGV6J7HKNPA&Expires=1587381963&Signature=hdMDl6Kkrg%2B26Qp5kr8SbNTS84Q%3D",
+									"extension": "pdf"
+								},
+								{
+									"name": "Vídeo",
+									"externalurl": "https://ava30-disciplinas.s3.amazonaws.com/20201/5ab0970ad1f914322e0d8aa97cb809e0.mp4?AWSAccessKeyId=AKIAIK4MANGV6J7HKNPA&Expires=1587381963&Signature=Fb%2FCV2k7QpsFlMa%2BIvSKS6qeOWU%3D",
+									"extension": "video"
+								},
+								{
+									"name": "Aula ao vivo",
+									"externalurl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZWZiMzJmOTctNTBjYi00ODAwLWFiY2YtY2RkNGNmMTkwNDU1%40thread.v2/0?context=%7b%22Tid%22%3a%22a50e7b76-8ea5-492c-bf17-97d652fc3ce9%22%2c%22Oid%22%3a%22be8cb39c-8697-4175-92c9-8fee407e6257%22%7d",
+									"extension": "externo"
+								}
+							]
+						},
+						"status": 200
+					}}
+			  }}
+			},
+			"404":{
+			  "description": "usuario nao possui materias"
+			},
+			"500": {
+			  "description": "Erro interno"
+			}
+		  }
+		}
+	}
+  }
+}
